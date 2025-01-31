@@ -145,18 +145,18 @@ def convert_to_relative_ranges(start_cell, ranges):
 
 
 def get_starting_cell():
-    while True:
-        starting_cell = input("Enter the top left most cell in your region (e.g., B2):\n")
-        sure_response = input(f"You have entered '{starting_cell}', is this correct? (Y/N/Exit):\n").lower()
+    name_map = {
+        "ethan": "B30", "e": "B30",
+        "chase": "B2", "c": "B2"
+    }
+    name = os.getenv('NAME').lower()
 
-        if sure_response == 'y':
-            return starting_cell
-        elif sure_response == 'n':
-            continue
-        elif sure_response == 'exit':
-            exit_app()
-        else:
-            print("Please enter 'Y' for Yes, 'N' for No or 'Exit' to Exit.")
+    if name in name_map:
+        return name_map[name]
+    else:
+        print("Invalid Name, please update .env file")
+        exit_app()
+
 
 def exit_app():
     print("Exiting Now...")
