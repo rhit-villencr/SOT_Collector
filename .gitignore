@@ -1,2 +1,6 @@
 google_auth.json
 .env
+*.espec
+/build
+/dist
+main.spec
