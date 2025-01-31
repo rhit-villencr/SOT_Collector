@@ -3,4 +3,4 @@ google_auth.json
 *.espec
 /build
 /dist
-main.spec
+*.spec
